@@ -1,98 +1,381 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+<div align="center">
+  <img src="https://nestjs.com/img/logo-small.svg" width="120" alt="NestJS Logo" />
+  <h1>🚀 NestJS Production-Ready Boilerplate</h1>
+  <p>A comprehensive, enterprise-grade NestJS boilerplate with authentication, database integration, and best practices</p>
+  
+  <p>
+    <img src="https://img.shields.io/badge/NestJS-11.0.1-red?style=for-the-badge&logo=nestjs" alt="NestJS Version" />
+    <img src="https://img.shields.io/badge/TypeScript-5.7.3-blue?style=for-the-badge&logo=typescript" alt="TypeScript Version" />
+    <img src="https://img.shields.io/badge/Node.js-20+-green?style=for-the-badge&logo=node.js" alt="Node.js Version" />
+    <img src="https://img.shields.io/badge/MySQL-8.0+-orange?style=for-the-badge&logo=mysql" alt="MySQL Version" />
+  </p>
+  
+  <p>
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="License" />
+    <img src="https://img.shields.io/badge/PRs-Welcome-brightgreen.svg?style=for-the-badge" alt="PRs Welcome" />
+    <img src="https://img.shields.io/badge/Maintained-Yes-green.svg?style=for-the-badge" alt="Maintained" />
+  </p>
+</div>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+---
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## 📖 Table of Contents
 
-## Description
+- [✨ Features](#-features)
+- [🏗️ Architecture](#️-architecture)
+- [🚀 Quick Start](#-quick-start)
+- [⚙️ Configuration](#️-configuration)
+- [📚 API Documentation](#-api-documentation)
+- [🧪 Testing](#-testing)
+- [🚢 Deployment](#-deployment)
+- [📁 Project Structure](#-project-structure)
+- [🛠️ Built With](#️-built-with)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## ✨ Features
 
-## Project setup
+### 🔐 Authentication & Security
 
-```bash
-$ npm install
+- **JWT Authentication** - Secure token-based authentication
+- **Auth Guards** - Route protection with custom guards
+- **Helmet** - Security headers and protection
+- **CORS** - Cross-origin resource sharing configuration
+- **Input Validation** - Class-validator with DTOs
+
+### 🗄️ Database & ORM
+
+- **TypeORM Integration** - Powerful ORM with decorators
+- **MySQL Support** - Production-ready database setup
+- **Entity Management** - Well-structured database entities
+- **Migration Support** - Database version control
+
+### 🏗️ Architecture & Design
+
+- **Modular Structure** - Clean, scalable architecture
+- **Custom Decorators** - Reusable decorators for common tasks
+- **Middleware System** - Request/response processing
+- **Global Configuration** - Environment-based config management
+- **API Versioning** - Built-in API version control
+
+### 📖 Documentation & Monitoring
+
+- **Swagger/OpenAPI** - Interactive API documentation
+- **Request Logging** - Comprehensive request/response logging
+- **Error Handling** - Global exception filters
+- **Health Checks** - Application health monitoring
+
+### 🔧 Development Tools
+
+- **Hot Reload** - Development with automatic restart
+- **ESLint & Prettier** - Code formatting and linting
+- **Jest Testing** - Unit and E2E testing setup
+- **TypeScript** - Full TypeScript support
+- **Compression** - Response compression for better performance
+
+## 🏗️ Architecture
+
+```
+src/
+├── 🔐 auth/           # Authentication module
+├── 🎨 custom-decorator/ # Custom decorators
+├── 🗄️ database/        # Database configuration
+├── 📊 entities/        # TypeORM entities
+├── 🛡️ guards/          # Route guards
+├── 🔧 middlewares/     # Custom middlewares
+├── 🌐 shared/          # Shared utilities & config
+├── 👤 user/            # User management module
+└── 📝 swagger-setup.ts # API documentation setup
 ```
 
-## Compile and run the project
+## 🚀 Quick Start
+
+### Prerequisites
+
+- **Node.js** 20+
+- **npm** or **yarn**
+- **MySQL** 8.0+
+
+### Installation
+
+1. **Clone the repository**
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+git clone <your-repo-url>
+cd nest-sample
 ```
 
-## Run tests
+2. **Install dependencies**
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+npm install
 ```
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+3. **Environment setup**
 
 ```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+cp .env.example .env
+# Edit .env with your configuration
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+4. **Database setup**
 
-## Resources
+```bash
+# Create your MySQL database
+# Update database credentials in .env
+```
 
-Check out a few resources that may come in handy when working with NestJS:
+5. **Start development server**
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+```bash
+npm run dev
+```
 
-## Support
+🎉 **Your application is now running at `http://localhost:3000`**
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+## ⚙️ Configuration
 
-## Stay in touch
+### Environment Variables
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Create a `.env` file in the root directory:
 
-## License
+```env
+# Server Configuration
+SERVICE_PORT=3000
+NODE_ENV=development
+API_VERSION=1
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+# Database Configuration
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=your_username
+DB_PASSWORD=your_password
+DB_NAME=nest_sample
+
+# JWT Configuration
+JWT_SECRET=your-super-secret-jwt-key
+JWT_EXPIRES_IN=3600
+```
+
+### Configuration Validation
+
+The application uses **class-validator** to ensure all environment variables are properly configured:
+
+- ✅ **Type Safety** - Automatic type conversion
+- ✅ **Validation** - Required fields validation
+- ✅ **Error Handling** - Clear error messages for missing config
+
+## 📚 API Documentation
+
+### Swagger UI
+
+Access interactive API documentation at: `http://localhost:3000/api`
+
+### Features:
+
+- 📖 **Interactive Documentation** - Test APIs directly from browser
+- 🔐 **Authentication Support** - Built-in Bearer token auth
+- 📥 **Postman Collection** - Export collection at `/api-json`
+- 🔄 **Real-time Updates** - Documentation updates with code changes
+
+### Available Endpoints
+
+| Method | Endpoint       | Description           |
+| ------ | -------------- | --------------------- |
+| `POST` | `/user/signup` | User registration     |
+| `GET`  | `/api`         | Swagger documentation |
+| `GET`  | `/api-json`    | OpenAPI JSON spec     |
+
+## 🧪 Testing
+
+### Running Tests
+
+```bash
+# Unit tests
+npm run test
+
+# E2E tests
+npm run test:e2e
+
+# Test coverage
+npm run test:cov
+
+# Watch mode
+npm run test:watch
+```
+
+### Test Structure
+
+- **Unit Tests** - Individual component testing
+- **E2E Tests** - Full application flow testing
+- **Coverage Reports** - Detailed test coverage analysis
+
+## 🚢 Deployment
+
+### Development
+
+```bash
+npm run start:dev
+```
+
+### Production
+
+```bash
+# Build the application
+npm run build
+
+# Start production server
+npm run start:prod
+```
+
+### Docker Support (Coming Soon)
+
+```bash
+# Build Docker image
+docker build -t nest-sample .
+
+# Run container
+docker run -p 3000:3000 nest-sample
+```
+
+## 📁 Project Structure
+
+```
+nest-sample/
+├── 📄 README.md
+├── 📦 package.json
+├── ⚙️ nest-cli.json
+├── 🔧 tsconfig.json
+├── 🧪 jest.config.js
+├── 🎨 eslint.config.mjs
+│
+├── 📂 src/
+│   ├── 🏠 app.module.ts              # Root application module
+│   ├── 🚀 main.ts                    # Application entry point
+│   ├── 📖 swagger-setup.ts           # API documentation setup
+│   │
+│   ├── 🔐 auth/                      # Authentication module
+│   │   ├── auth.module.ts
+│   │   └── auth.service.ts
+│   │
+│   ├── 🎨 custom-decorator/           # Custom decorators
+│   │   └── user-decorator.ts
+│   │
+│   ├── 🗄️ database/                  # Database configuration
+│   │   └── database.module.ts
+│   │
+│   ├── 📊 entities/                  # TypeORM entities
+│   │   └── user.entity.ts
+│   │
+│   ├── 🛡️ guards/                    # Route protection
+│   │   └── auth-guard.ts
+│   │
+│   ├── 🔧 middlewares/               # Custom middlewares
+│   │   ├── logger-middleware.ts
+│   │   └── sample-middleware.ts
+│   │
+│   ├── 🌐 shared/                    # Shared utilities
+│   │   ├── shared.module.ts
+│   │   ├── global-config.service.ts
+│   │   └── dto/
+│   │       └── env.dto.ts
+│   │
+│   └── 👤 user/                      # User management
+│       ├── user.module.ts
+│       ├── user.controller.ts
+│       ├── user.service.ts
+│       └── dto/
+│           └── user-sign-up.dto.ts
+│
+└── 🧪 test/                          # Test files
+    ├── app.e2e-spec.ts
+    └── jest-e2e.json
+```
+
+## 🛠️ Built With
+
+### Core Technologies
+
+- **[NestJS](https://nestjs.com/)** - Progressive Node.js framework
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript
+- **[TypeORM](https://typeorm.io/)** - Object-Relational Mapping
+- **[MySQL](https://www.mysql.com/)** - Relational database
+
+### Key Dependencies
+
+- **[Swagger/OpenAPI](https://swagger.io/)** - API documentation
+- **[Class Validator](https://github.com/typestack/class-validator)** - Validation decorators
+- **[Class Transformer](https://github.com/typestack/class-transformer)** - Object transformation
+- **[Helmet](https://helmetjs.github.io/)** - Security middleware
+- **[Compression](https://github.com/expressjs/compression)** - Response compression
+
+### Development Tools
+
+- **[Jest](https://jestjs.io/)** - Testing framework
+- **[ESLint](https://eslint.org/)** - Code linting
+- **[Prettier](https://prettier.io/)** - Code formatting
+
+## 🚀 Scripts
+
+| Script                | Description                              |
+| --------------------- | ---------------------------------------- |
+| `npm run build`       | Build production bundle                  |
+| `npm run start`       | Start production server                  |
+| `npm run dev`         | Start development server with hot reload |
+| `npm run start:debug` | Start with debugging enabled             |
+| `npm run lint`        | Run ESLint                               |
+| `npm run format`      | Format code with Prettier                |
+| `npm run test`        | Run unit tests                           |
+| `npm run test:e2e`    | Run end-to-end tests                     |
+| `npm run test:cov`    | Generate test coverage report            |
+
+## 🤝 Contributing
+
+We welcome contributions! Please follow these steps:
+
+1. **Fork the repository**
+2. **Create a feature branch** (`git checkout -b feature/amazing-feature`)
+3. **Commit your changes** (`git commit -m 'Add amazing feature'`)
+4. **Push to the branch** (`git push origin feature/amazing-feature`)
+5. **Open a Pull Request**
+
+### Development Guidelines
+
+- Follow TypeScript best practices
+- Write tests for new features
+- Update documentation as needed
+- Use conventional commit messages
+
+## 📋 Roadmap
+
+- [ ] 🐳 Docker containerization
+- [ ] 🔄 Redis caching integration
+- [ ] 📧 Email service integration
+- [ ] 📱 Rate limiting
+- [ ] 🔒 Role-based access control (RBAC)
+- [ ] 📊 Monitoring and metrics
+- [ ] 🌐 GraphQL support
+- [ ] 📤 File upload handling
+
+## 🐛 Known Issues
+
+- None at the moment! 🎉
+
+## 📞 Support
+
+If you have any questions or need help:
+
+- 📧 **Email**: [your-email@example.com]
+- 💬 **Discord**: [Your Discord Server]
+- 🐛 **Issues**: [GitHub Issues](https://github.com/your-username/nest-sample/issues)
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+  <p>Made with ❤️ by developers, for developers</p>
+  <p>⭐ Star this repo if you find it helpful!</p>
+</div>
