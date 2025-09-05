@@ -6,7 +6,7 @@
   <p>
     <img src="https://img.shields.io/badge/NestJS-11.0.1-red?style=for-the-badge&logo=nestjs" alt="NestJS Version" />
     <img src="https://img.shields.io/badge/TypeScript-5.7.3-blue?style=for-the-badge&logo=typescript" alt="TypeScript Version" />
-    <img src="https://img.shields.io/badge/Node.js-20+-green?style=for-the-badge&logo=node.js" alt="Node.js Version" />
+    <img src="https://img.shields.io/badge/Node.js-22+-green?style=for-the-badge&logo=node.js" alt="Node.js Version" />
     <img src="https://img.shields.io/badge/MySQL-8.0+-orange?style=for-the-badge&logo=mysql" alt="MySQL Version" />
   </p>
   
@@ -73,6 +73,13 @@
 - **TypeScript** - Full TypeScript support
 - **Compression** - Response compression for better performance
 
+### 🐳 Docker & Containerization
+
+- **Multi-stage Dockerfile** - Optimized builds for dev/prod
+- **Docker Compose** - Complete development environment
+- **Health Checks** - Container health monitoring
+- **Production Ready** - Secure, non-root user setup
+
 ## 🏗️ Architecture
 
 ```
@@ -92,7 +99,7 @@ src/
 
 ### Prerequisites
 
-- **Node.js** 20+
+- **Node.js** 22+
 - **npm** or **yarn**
 - **MySQL** 8.0+
 
@@ -228,14 +235,56 @@ npm run build
 npm run start:prod
 ```
 
-### Docker Support (Coming Soon)
+### Docker Deployment
+
+#### Quick Start with Docker Compose
 
 ```bash
-# Build Docker image
+# Start development environment
+docker-compose up
+
+# Start with detached mode
+docker-compose up -d
+
+# Start production environment
+docker-compose --profile production up
+```
+
+#### Manual Docker Commands
+
+```bash
+# Build the Docker image
 docker build -t nest-sample .
 
-# Run container
-docker run -p 3000:3000 nest-sample
+# Run development container
+docker build --target development -t nest-sample:dev .
+docker run -p 3000:3000 -v $(pwd):/app nest-sample:dev
+
+# Run production container
+docker build --target production -t nest-sample:prod .
+docker run -p 3000:3000 nest-sample:prod
+```
+
+#### Docker Services
+
+- **app**: NestJS application (development mode)
+- **app-prod**: NestJS application (production mode)
+- **db**: MySQL 8.0 database
+
+#### Environment Variables for Docker
+
+```env
+# Docker-specific environment variables
+NODE_ENV=development
+SERVICE_PORT=3000
+API_VERSION=1
+
+# Database (when using docker-compose)
+DB_HOST=db
+DB_PORT=3306
+DB_USER=nestuser
+DB_PASSWORD=nestpassword
+DB_NAME=nest_sample
 ```
 
 ## 📁 Project Structure
@@ -348,7 +397,7 @@ We welcome contributions! Please follow these steps:
 
 ## 📋 Roadmap
 
-- [ ] 🐳 Docker containerization
+- [x] 🐳 Docker containerization
 - [ ] 🔄 Redis caching integration
 - [ ] 📧 Email service integration
 - [ ] 📱 Rate limiting
